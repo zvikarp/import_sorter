@@ -5,6 +5,8 @@ import 'dart:io';
 Map<String, File> dartFiles(String currentPath, List<String> args) {
   final dartFiles = <String, File>{};
   final allContents = [
+    ..._readDir(currentPath, 'apps'),
+    ..._readDir(currentPath, 'packages'),
     ..._readDir(currentPath, 'lib'),
     ..._readDir(currentPath, 'bin'),
     ..._readDir(currentPath, 'test'),
